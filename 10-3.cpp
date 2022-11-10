@@ -5,7 +5,7 @@
 using namespace std;
 const int STUDENTS = 5;
 const int QUIZZES = 3;
-int quizTotal (int scores[QUIZZES], int students);
+int quizTotal(int scores[STUDENTS][QUIZZES], int students);
 
 int main() {
     string first_name;
@@ -14,12 +14,12 @@ int main() {
     string name;
     string names[STUDENTS];
 
-   for(int i = 0; i < STUDENTS; i++) {
+    for (int i = 0; i < STUDENTS; i++) {
         cout << "Enter first and last name of student #" << (i + 1) << ": ";
         cin >> first_name >> last_name;
         names[i] = last_name + ", " + first_name;
-   }
-    
+    }
+
 
     for (int qz = 0; qz < QUIZZES; qz++) {
         for (int st = 0; st < STUDENTS; st++) {
@@ -47,7 +47,7 @@ int main() {
     return 0;
 }
 
-int quizTotal(int scores[QUIZZES], int students) {
+int quizTotal(int scores[STUDENTS][QUIZZES], int students) {
     int total = 0;
     for (int qz = 0; qz < QUIZZES; qz++) {
         total += scores[students][qz];
